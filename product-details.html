@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details - Ecko Diecast</title>
+    <link rel="stylesheet" href="product-details.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <div class="logo-container">
+                <img src="ecko-logo.jpg">
+                <h2>ECKO <span>DIECAST</span></h2>
+            </div>
+
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="contact.html">Contact</a>
+                <a href="index.html">Logout</a>
+            </nav>
+        </header>
+
+        <!-- PRODUCT DETAILS -->
+        <section class="details-panel">
+
+            <a href="products.html" class="back-link">
+                &larr; Back to Products
+            </a>
+
+            <div class="product-details">
+
+                <div class="product-image">
+                    <img id="car-image" src="car1.jpg"
+                         alt="Diecast Car">
+                </div>
+
+                <div class="product-info">
+                    <p class="tagline">ECKO DIECAST COLLECTION</p>
+
+                    <h1 id="car-name">Red Sports Car</h1>
+
+                    <p class="price" id="car-price">₱150.00</p>
+
+                    <p class="description">
+                        Add this miniature car to your collection.
+                        Contact us for more information about
+                        availability and product condition.
+                    </p>
+
+                    <p class="condition">
+                        Condition: Check with seller
+                    </p>
+
+                    <a href="contact.html" class="button">
+                        INQUIRE ABOUT THIS ITEM
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            Ecko Diecast Collectibles
+        </footer>
+
+    </div>
+
+    <!-- DISPLAY THE SELECTED PRODUCT -->
+    <script>
+        var car = new URLSearchParams(window.location.search)
+                       .get("car");
+
+        var names = [
+            "Red Sports Car",
+            "Blue Sports Car",
+            "Black Muscle Car",
+            "White Classic Car"
+        ];
+
+        var prices = [
+            "₱150.00",
+            "₱120.00",
+            "₱180.00",
+            "₱100.00"
+        ];
+
+        var images = [
+            "car1.jpg",
+            "car2.jpg",
+            "car3.jpg",
+            "car4.jpg"
+        ];
+
+        var index = Number(car) - 1;
+
+        if (index >= 0 && index < names.length) {
+            document.getElementById("car-name").innerText =
+                names[index];
+
+            document.getElementById("car-price").innerText =
+                prices[index];
+
+            document.getElementById("car-image").src =
+                images[index];
+
+            document.getElementById("car-image").alt =
+                names[index];
+        }
+    </script>
+
+</body>
+</html>

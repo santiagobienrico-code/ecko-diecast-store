@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products - Ecko Diecast</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <div class="logo-container">
+                <img src="ecko-logo.jpg">
+                <h2>ECKO <span>DIECAST</span></h2>
+            </div>
+
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="contact.html">Contact</a>
+                <a href="index.html">Logout</a>
+            </nav>
+        </header>
+
+        <!-- PAGE TITLE -->
+        <section class="page-title">
+            <p>OUR COLLECTION</p>
+            <h1>Diecast Products</h1>
+            <p>Find your next favorite miniature car.</p>
+        </section>
+
+        <!-- SEARCH BAR -->
+        <div class="search-box">
+            <input type="text" id="search"
+                   placeholder="Search for a diecast car..."
+                   onkeyup="searchProducts()">
+        </div>
+
+        <!-- PRODUCTS -->
+        <section class="products">
+
+            <div class="product-card">
+                <img src="car1.jpg" alt="Red Diecast Car">
+                <h3>Red Sports Car</h3>
+                <p class="price">₱150.00</p>
+                <a href="product-details.html?car=1" class="button">
+                    VIEW DETAILS
+                </a>
+            </div>
+
+            <div class="product-card">
+                <img src="car2.jpg" alt="Blue Diecast Car">
+                <h3>Blue Sports Car</h3>
+                <p class="price">₱120.00</p>
+                <a href="product-details.html?car=2" class="button">
+                    VIEW DETAILS
+                </a>
+            </div>
+
+            <div class="product-card">
+                <img src="car3.jpg" alt="Black Diecast Car">
+                <h3>Black Muscle Car</h3>
+                <p class="price">₱180.00</p>
+                <a href="product-details.html?car=3" class="button">
+                    VIEW DETAILS
+                </a>
+            </div>
+
+            <div class="product-card">
+                <img src="car4.jpg" alt="White Diecast Car">
+                <h3>White Classic Car</h3>
+                <p class="price">₱100.00</p>
+                <a href="product-details.html?car=4" class="button">
+                    VIEW DETAILS
+                </a>
+            </div>
+
+        </section>
+
+        <footer>
+            Ecko Diecast Collectibles
+        </footer>
+
+    </div>
+
+    <!-- SIMPLE SEARCH FUNCTION -->
+    <script>
+        function searchProducts() {
+            var search = document.getElementById("search").value.toLowerCase();
+            var products = document.getElementsByClassName("product-card");
+
+            for (var i = 0; i < products.length; i++) {
+                var name = products[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+
+                if (name.includes(search)) {
+                    products[i].style.display = "block";
+                } else {
+                    products[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

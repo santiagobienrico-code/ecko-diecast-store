@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact - Ecko Diecast</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+            <div class="logo-container">
+                <img src="ecko-logo.png" alt="Ecko Logo">
+                <h2>ECKO <span>DIECAST</span></h2>
+            </div>
+
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="index.html">Logout</a>
+            </nav>
+        </header>
+
+        <!-- CONTACT TITLE -->
+        <section class="page-title">
+            <p>WE ARE HERE TO HELP</p>
+            <h1>Contact Us</h1>
+            <p>Have questions about our diecast cars? Send us an inquiry.</p>
+        </section>
+
+        <!-- CONTACT CONTENT -->
+        <section class="contact-panel">
+
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+
+                <p>
+                    Interested in one of our diecast cars?
+                    Contact us to ask about prices, availability,
+                    and product condition.
+                </p>
+
+                <div class="info-item">
+                    <h3>Store Name</h3>
+                    <p>Ecko Diecast Collectibles</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Products</h3>
+                    <p>Hot Wheels and Diecast Cars</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Inquiries</h3>
+                    <p>Send us a message using the form.</p>
+                </div>
+            </div>
+
+            <!-- CONTACT FORM -->
+            <div class="contact-form">
+                <h2>Send an Inquiry</h2>
+
+                <form id="contactForm">
+
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name"
+                           placeholder="Enter your name" required>
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email" required>
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message"
+                              placeholder="Write your inquiry here..."
+                              rows="5" required></textarea>
+
+                    <button type="submit">SEND INQUIRY</button>
+
+                </form>
+
+                <p id="response"></p>
+            </div>
+
+        </section>
+
+        <footer>
+            Ecko Diecast Collectibles
+        </footer>
+
+    </div>
+
+    <!-- DEMO FORM FUNCTION -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("response").innerText =
+                "Thank you! Your form works, but this demo does not send your message yet.";
+
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
